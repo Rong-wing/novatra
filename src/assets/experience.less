@@ -1,0 +1,79 @@
+.work-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    .work-card {
+        width: calc(60% - 30px);
+        display: flex;
+        flex-direction: column;
+        .work-item {
+            width: 100%;
+            background: #FFF;
+            border-radius: 10px;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            .icon {
+                border-radius: 50%;
+                width: 100px;
+                height: 100px;
+                margin-right: 20px;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .name {
+                font-size: 20px;
+            }
+            .job {
+                margin: 10px 0 0;
+            }
+        }
+        .years {
+            width: 100%;
+            margin: 10px 0;
+        }
+        .description {
+            width: 100%;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            ul {
+                width: 100%;
+                list-style-position: inside;
+                list-style-type: disc;
+                li {
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+    .skills-list {
+        width: calc(40% - 30px);
+        ul {
+            width: 100%;
+            flex-direction: column;
+            li {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            .level-bar {
+                width: 100%;
+                height: 6.4px;
+                border-radius: 50px;
+                background: rgba(255, 152, 119, 0.3);
+                overflow: hidden;
+            }
+            .fill-bar {
+                height: 100%;
+                width: 50%; /* 進度百分比 */
+                background: rgba(255, 152, 119, 1);
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+        }
+    }
+}
