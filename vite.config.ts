@@ -10,6 +10,7 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
+  base: '/novatra/',   //這裡一定要加上 repo 名稱
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
