@@ -4,7 +4,7 @@ header {
     height: var(--header-height);
     position: fixed;
     top: 0;
-    background: #FFF;
+    background: #2f4863;
     z-index: 999;
     .container {
         display: flex;
@@ -16,8 +16,23 @@ header {
 .logo {
     display: block;
 }
-nav {
-    width: 60%;
-    align-items: center;
-    justify-content: space-between;
+.menu {
+    nav {
+        width: 60%;
+        align-items: center;
+        justify-content: space-between;
+        display: flex;
+        a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            font-size: 16px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            &:hover {
+                background: #f0f0f0;
+            }
+        }
+    }
 }

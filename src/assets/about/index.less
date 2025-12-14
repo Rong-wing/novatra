@@ -1,0 +1,109 @@
+.about {
+    margin-top: var(--header-height);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    box-sizing: border-box;
+}
+.filter {
+    display: flex;
+}
+.filter-tags {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .filter-tag {
+        margin-right: 20px;
+        cursor: pointer;
+        background: #1E2D45;
+        color: #FFF;
+        padding: 5px 10px;
+        box-sizing: border-box;
+        border-radius: 7px;
+    }
+}
+.article-list {
+    font-size: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    article {
+        width: calc(100% / 3 - 20px);
+        height: 100%;
+        margin: auto 10px 20px;
+        border-radius: 10px;
+        background: #FFF;
+        padding: 15px;
+        box-sizing: border-box;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        &:hover {
+            .mask {
+                display: flex;
+            }
+        }
+        .thumbnail {
+            width: 100%;
+            height: 150px;
+            border-radius: 10px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: 100%;
+                display: block;
+                object-fit: cover;
+            }
+        }
+        .title {
+            font-size: 18px;
+            height: 65px;
+            margin-top: 10px;
+        }
+        .description {
+            font-size: 16px;
+            color: #CCC;
+        }
+        .tags {
+            width: 100%;
+            font-size: 16px;
+            display: flex;
+            list-style-type: none;
+            padding-left: 0;
+            li {
+                margin-right: 10px;
+                background: #1E2D45;
+                color: #FFF;
+                padding: 5px 10px;
+                box-sizing: border-box;
+                border-radius: 7px;
+            }
+        }
+        .mask {
+            display: none;
+            background: #1e2d45d6;
+            width: 100%;
+            height: 85%;
+            border-radius: 7px;
+            position: absolute;
+            left: 0;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            span {
+                font-size: 18px;
+                color: #1E2D45;
+                background: #FFF;
+                padding: 5px 10px;
+                border-radius: 7px;
+            }
+        }
+    }
+}
