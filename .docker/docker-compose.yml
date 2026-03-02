@@ -1,0 +1,13 @@
+services:
+  php-server:
+    image: php:8.2-apache
+    ports:
+      - "8080:80"
+    volumes:
+      - ../backend/:/var/www/html
+    networks:
+      - backend-network
+
+networks:
+  backend-network:
+    driver: bridge
