@@ -1,0 +1,16 @@
+# dockerfile
+FROM php:8.2-fpm
+
+# 安裝 MongoDB 擴展所需的依賴，並加上 ca-certificates
+RUN apt-get update && apt-get install -y \
+    libssl-dev \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# 安裝 MongoDB 擴展
+RUN pecl install mongodb && docker-php-ext-enable mongodb
+
+# 確保憑證是最新的
+RUN update-ca-certificates
+
+WORKDIR /var/www/html
