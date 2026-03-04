@@ -27,5 +27,16 @@ services:
     volumes:
       - mongo-data:/data/db
 
+  frontend:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - ..:/app
+      - /app/node_modules # 加上這行，避免容器內的 node_modules 被覆蓋
+    ports:
+      - "5173:5173"
+    # 這裡加入一個判斷，如果 node_modules 不存在才 install，可以加快啟動速度
+    command: sh -c "if [ ! -d 'node_modules' ]; then npm install; fi && npm run dev -- --host"
+
 volumes:
   mongo-data:
