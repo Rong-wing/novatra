@@ -95,7 +95,8 @@
 			});
 
 			//這裡的路徑必須對應 Proxy 的設定
-			const response = await fetch(`/novatra/api/index.php?${params.toString()}`);
+			// const response = await fetch(`/novatra/api/index.php?${params.toString()}`);
+			const response = await fetch(`/api/index.php?${params.toString()}`);
 			const result = await response.json();
 
 			//這裏面顯示json
