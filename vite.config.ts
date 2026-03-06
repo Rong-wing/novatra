@@ -36,7 +36,8 @@ export default defineConfig({
     proxy: {
       //當我在 Vue 呼叫 /api 時，轉發到 PHP Server
       '/novatra/api': {
-        target: 'http://localhost:8080', 
+        // target: 'http://localhost:8080', 
+        target: 'https://novatra.up.railway.app/', 
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/novatra\/api/, ''), // 如果 PHP 那邊路徑沒有 /api，這行可以拔掉
       }
