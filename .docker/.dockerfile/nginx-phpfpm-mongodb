@@ -1,4 +1,13 @@
 # dockerfile
+# --- 編譯前端 (Node.js) ---
+FROM node:20 AS frontend-builder
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . . 
+RUN npm run build
+
+# --- 運行環境 (PHP + Nginx) ---
 FROM php:8.2-fpm
 
 # 安裝 Nginx 與 MongoDB 擴展
@@ -14,6 +23,9 @@ RUN apt-get update && apt-get install -y \
 # 複製 Nginx 設定
 COPY .docker/.nginx/nginx.conf /etc/nginx/sites-available/default
 RUN ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
+# 從builder 裡面，把編譯好的 dist 抓過來
+COPY --from=frontend-builder /app/dist /var/www/html/dist
 
 # 複製專案並設定權限
 COPY . /var/www/html
