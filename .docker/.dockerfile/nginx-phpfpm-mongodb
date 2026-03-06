@@ -28,7 +28,7 @@ RUN ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 COPY . /var/www/html
 
 # 從builder 裡面，把編譯好的 dist 抓過來
-COPY --from=frontend-builder /app/dist /var/www/html/public/dist
+COPY --from=frontend-builder /app/public/dist /var/www/html/public/dist
 
 #設定權限
 RUN chown -R www-data:www-data /var/www/html
