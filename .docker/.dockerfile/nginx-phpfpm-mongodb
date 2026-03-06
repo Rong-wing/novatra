@@ -23,5 +23,5 @@ WORKDIR /var/www/html
 
 # 啟動腳本：自動把 Nginx 的 80 改成 Railway 的 PORT，然後啟動兩個服務
 CMD sed -i "s/listen 80;/listen ${PORT};/" /etc/nginx/sites-available/default && \
-    service php8.2-fpm start && \
+    php-fpm -D && \
     nginx -g 'daemon off;'
