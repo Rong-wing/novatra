@@ -1,0 +1,28 @@
+# dockerfile
+FROM php:8.2-fpm
+
+# 安裝 Nginx 與 MongoDB 擴展
+RUN apt-get update && apt-get install -y \
+    nginx \
+    libssl-dev \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/* \
+    && pecl install mongodb \
+    && docker-php-ext-enable mongodb \
+    && update-ca-certificates
+
+# 複製 Nginx 設定
+# 註：如果你的 nginx.conf 在 .nginx 資料夾，請改為 COPY ./.nginx/nginx.conf ...
+COPY ./nginx.conf /etc/nginx/sites-available/default
+RUN ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
+# 複製專案並設定權限
+COPY . /var/www/html
+RUN chown -R www-data:www-data /var/www/html
+
+WORKDIR /var/www/html
+
+# 啟動腳本：自動把 Nginx 的 80 改成 Railway 的 PORT，然後啟動兩個服務
+CMD sed -i "s/listen 80;/listen ${PORT};/" /etc/nginx/sites-available/default && \
+    service php8.2-fpm start && \
+    nginx -g 'daemon off;'
