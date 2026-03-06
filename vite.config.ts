@@ -15,7 +15,8 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
-  base: '/novatra/',   //這裡一定要加上 repo 名稱
+  // base: '/novatra/',   //測試網站需要
+  base: '/',   //正式網站
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./frontend/src', import.meta.url))
@@ -24,7 +25,7 @@ export default defineConfig({
   build: {
     //因為 root 在 frontend，預設 dist 會跑去 frontend/dist
     //建議改回根目錄的 dist，比較乾淨
-    outDir: resolve(__dirname, 'dist'),
+    outDir: resolve(__dirname, 'public/dist'),
     emptyOutDir: true, // 確保每次打包都會清空舊檔
     rollupOptions: {
       //指定進入點（相對於 root）
@@ -36,8 +37,7 @@ export default defineConfig({
     proxy: {
       //當我在 Vue 呼叫 /api 時，轉發到 PHP Server
       '/novatra/api': {
-        // target: 'http://localhost:8080', 
-        target: 'https://novatra.up.railway.app/', 
+        target: 'http://localhost:8080',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/novatra\/api/, ''), // 如果 PHP 那邊路徑沒有 /api，這行可以拔掉
       }
