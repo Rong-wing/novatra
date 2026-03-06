@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     && update-ca-certificates
 
 # 複製 Nginx 設定
-COPY .nginx/nginx.conf /etc/nginx/sites-available/default
+COPY .docker/.nginx/nginx.conf /etc/nginx/sites-available/default
 RUN ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 
 # 複製專案並設定權限
