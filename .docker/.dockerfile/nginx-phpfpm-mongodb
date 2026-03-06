@@ -24,11 +24,13 @@ RUN apt-get update && apt-get install -y \
 COPY .docker/.nginx/nginx.conf /etc/nginx/sites-available/default
 RUN ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 
-# 從builder 裡面，把編譯好的 dist 抓過來
-COPY --from=frontend-builder /app/dist /var/www/html/dist
-
-# 複製專案並設定權限
+# 複製專案
 COPY . /var/www/html
+
+# 從builder 裡面，把編譯好的 dist 抓過來
+COPY --from=frontend-builder /app/dist /var/www/html/public/dist
+
+#設定權限
 RUN chown -R www-data:www-data /var/www/html
 
 WORKDIR /var/www/html
