@@ -12,8 +12,7 @@ RUN apt-get update && apt-get install -y \
     && update-ca-certificates
 
 # 複製 Nginx 設定
-# 註：如果你的 nginx.conf 在 .nginx 資料夾，請改為 COPY ./.nginx/nginx.conf ...
-COPY ./nginx.conf /etc/nginx/sites-available/default
+COPY ./.nginx/nginx.conf /etc/nginx/sites-available/default
 RUN ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 
 # 複製專案並設定權限
