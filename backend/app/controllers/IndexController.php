@@ -69,20 +69,6 @@
         }
 
         public function testMongoAction() {
-            $client = $this->getDI()->getShared('mongo');
-
-            try {
-                // 直接對 client 執行 listDatabases
-                $databases = $client->listDatabases();
-                return $this->response->setJsonContent([
-                    "status" => "success",
-                    "databases" => iterator_to_array($databases)
-                ]);
-            } catch (\Exception $e) {
-                return $this->response->setJsonContent([
-                    "status" => "error",
-                    "message" => $e->getMessage()
-                ]);
-            }
+            
         }
     }
