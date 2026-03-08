@@ -1,23 +1,41 @@
-# dockerfile
+# --- 第一階段：編譯前端 ---
+FROM node:20 AS frontend-builder
+WORKDIR /app
+COPY frontend/package*.json ./
+RUN npm install
+COPY frontend/ . 
+RUN npm run build
+
+# --- 第二階段：運行環境 (PHP + Nginx) ---
 FROM php:8.2-fpm
 
-# 安裝基礎依賴與 Phalcon 編譯工具
-ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
-
-RUN chmod +x /usr/local/bin/install-php-extensions && \
-    apt-get update && apt-get install -y \
+# 安裝 Nginx 與基礎依賴
+RUN apt-get update && apt-get install -y \
+    nginx \
     libssl-dev \
     ca-certificates \
-    && rm -rf /var/lib/apt/lists/* && \
-    # 安裝 Phalcon 核心擴展 (C 語言擴展)
+    && rm -rf /var/lib/apt/lists/*
+
+# 安裝 PHP 擴展 (Phalcon, MongoDB, PSR)
+ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+RUN chmod +x /usr/local/bin/install-php-extensions && \
     install-php-extensions mongodb psr phalcon
 
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+# 複製 Nginx 設定檔
+COPY .docker/.nginx/nginx.conf /etc/nginx/sites-available/default
+RUN ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 
+# 複製後端程式碼
 WORKDIR /var/www/html
-
-# 複製後端程式碼 (生產環境用，開發時會被 volumes 覆蓋)
 COPY ./backend /var/www/html/backend
+
+# 複製前端編譯好的檔案
+COPY --from=frontend-builder /app/frontend/dist /var/www/html/public/dist
 
 # 設定權限
 RUN chown -R www-data:www-data /var/www/html
+
+# 啟動腳本 (確保 Nginx 在前景執行以防止容器退出)
+CMD php-fpm -D && \
+    sed -i "s/listen 80;/listen ${PORT};/" /etc/nginx/sites-available/default && \
+    nginx -g 'daemon off;'
