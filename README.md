@@ -25,7 +25,7 @@ docker-compose up -d
 
 ## 更新日誌 (Changelog)
 
-### 2026-03-07 | 架構現代化與環境重構
+### 2026-03-08 | 架構現代化與環境重構
 #### 前端工程化與目錄重整
 - 目錄解耦：將前端資源移至 frontend/ 獨立目錄，實現前後端物理隔離。
 - 配置優化：精簡 package.json 與 tsconfig，移除 redundant 工具以降低依賴體積。
