@@ -1,16 +1,23 @@
 # dockerfile
 FROM php:8.2-fpm
 
-# 安裝 MongoDB 擴展所需的依賴，並加上 ca-certificates
-RUN apt-get update && apt-get install -y \
+# 安裝基礎依賴與 Phalcon 編譯工具
+ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+
+RUN chmod +x /usr/local/bin/install-php-extensions && \
+    apt-get update && apt-get install -y \
     libssl-dev \
     ca-certificates \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* && \
+    # 安裝 Phalcon 核心擴展 (C 語言擴展)
+    install-php-extensions mongodb psr phalcon
 
-# 安裝 MongoDB 擴展
-RUN pecl install mongodb && docker-php-ext-enable mongodb
-
-# 確保憑證是最新的
-RUN update-ca-certificates
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
+
+# 複製後端程式碼 (生產環境用，開發時會被 volumes 覆蓋)
+COPY ./backend /var/www/html/backend
+
+# 設定權限
+RUN chown -R www-data:www-data /var/www/html

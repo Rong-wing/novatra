@@ -1,0 +1,7 @@
+# .dockerignore
+.git
+.github
+node_modules
+frontend/node_modules
+backend/vendor  # 打算在 Docker 裡跑 composer install
+.DS_Store

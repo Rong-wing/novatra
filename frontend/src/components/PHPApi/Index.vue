@@ -1,6 +1,7 @@
 <script setup lang="ts">
-	import { ref, computed, onMounted, nextTick, watch } from 'vue';
+	import { ref, inject, computed, onMounted, nextTick, watch } from 'vue';
 
+	const api = inject('api');
 	const exampleInput = ref(); //input model
 	const buttonState = ref(''); //點擊不同button，有不同的動作
 	const demoData = ref<any>(null); //show data
@@ -88,16 +89,19 @@
 			//顯示當前狀態
 			buttonState.value = "發送 Request 至遠端 PHP 環境，解析後回傳 JSON。";
 
-			//使用 URLSearchParams 處理特殊字元（如中括號、空格），避免網址出錯
-			const params = new URLSearchParams({
-				action: 'getProducts',
-				data: exampleInput.value //將 input 內容傳給 PHP
-			});
-
 			//這裡的路徑必須對應 Proxy 的設定
-			// const response = await fetch(`/novatra/api/index.php?${params.toString()}`);
-			const response = await fetch(`/api/index.php?${params.toString()}`);
-			const result = await response.json();
+			const response = await api.get('/index', {
+				params: {
+					action: 'getProducts',
+					data: exampleInput.value
+				}
+			});
+			// const response = await api.post('/index', {
+			// 	action: 'getProducts',
+			// 	data: exampleInput.value
+			// });
+			const result = response.data;
+			console.log(result);
 
 			//這裏面顯示json
 			displayData.value.json = JSON.stringify(result, null, 2);

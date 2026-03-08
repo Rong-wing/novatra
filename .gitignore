@@ -1,33 +1,56 @@
-# Logs
-logs
+# --- 系統與編輯器 ---
+.DS_Store
+Thumbs.db
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# --- 前端 (frontend) ---
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/coverage/
+frontend/.env*.local
+frontend/*.tsbuildinfo
+
+# --- 後端 (backend) ---
+backend/vendor/
+backend/.env
+backend/composer.phar
+
+# --- 環境變數與敏感資訊 (全域) ---
+.env
+.env.local
+.env.*.local
+.mongodb
+
+# --- 測試與日誌 ---
+/cypress/videos/
+/cypress/screenshots/
 *.log
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log*
 pnpm-debug.log*
-lerna-debug.log*
 
-node_modules
-.DS_Store
-dist
-dist-ssr
-coverage
-*.local
+# --- Docker & Container ---
+.docker/
+docker-compose.override.yml
 
-/cypress/videos/
-/cypress/screenshots/
+# --- 根目錄編譯產物 (防止在錯誤路徑 build) ---
+node_modules/
+dist/
+package-lock.json (如果你偏好用 yarn 或 pnpm，可以考慮忽略其中之一)
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# --- PHP/Composer 額外保護 ---
+.phpunit.result.cache
+/vendor/
 
-*.tsbuildinfo
-
-.env
-.mongodb
+# --- 敏感資訊強化 ---
+*.pem
+*.key
+credentials.json
+# 防止意外推上本地備份的資料庫
+*.sql
+*.dump
