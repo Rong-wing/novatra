@@ -1,6 +1,6 @@
 # --- 第一階段：編譯前端 ---
 FROM node:20 AS frontend-builder
-WORKDIR /app
+WORKDIR /app/frontend
 COPY frontend/package*.json ./
 RUN npm install
 COPY frontend/ . 
@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
     nginx \
     libssl-dev \
     ca-certificates \
+    unzip \
     && rm -rf /var/lib/apt/lists/*
 
 # 安裝 PHP 擴展 (Phalcon, MongoDB, PSR)
@@ -30,7 +31,7 @@ WORKDIR /var/www/html
 COPY ./backend /var/www/html/backend
 
 # 複製前端編譯好的檔案
-COPY --from=frontend-builder /app/frontend/dist /var/www/html/public/dist
+COPY --from=frontend-builder /app/frontend/dist /var/www/html/frontend/dist
 
 # 設定權限
 RUN chown -R www-data:www-data /var/www/html
