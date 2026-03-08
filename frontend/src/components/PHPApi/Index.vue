@@ -101,7 +101,6 @@
 			// 	data: exampleInput.value
 			// });
 			const result = response.data;
-			console.log(result);
 
 			//這裏面顯示json
 			displayData.value.json = JSON.stringify(result, null, 2);
