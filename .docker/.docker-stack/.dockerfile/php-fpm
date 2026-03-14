@@ -1,0 +1,43 @@
+# --- 第一階段：編譯前端 ---
+FROM node:20 AS frontend-builder
+WORKDIR /app
+COPY frontend/ ./frontend/
+WORKDIR /app/frontend
+RUN npm install && npm run build
+
+# --- 第二階段：運行環境 (PHP + Nginx) ---
+FROM php:8.2-fpm
+
+# 安裝系統工具與 Nginx
+RUN apt-get update && apt-get install -y \
+    nginx unzip git libssl-dev ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# 安裝 PHP 擴展 (先安裝擴展，再跑 Composer 會比較穩)
+ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+RUN chmod +x /usr/local/bin/install-php-extensions && \
+    install-php-extensions mongodb psr phalcon
+
+# 準備後端環境與 Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+WORKDIR /var/www/html
+COPY ./backend /var/www/html/backend
+
+# 執行 Composer 安裝
+RUN cd /var/www/html/backend && \
+    composer install --no-dev --optimize-autoloader
+
+# 複製前端編譯好的檔案
+COPY --from=frontend-builder /app/frontend/dist /var/www/html/frontend/dist
+
+# 複製 Nginx 設定檔
+COPY .docker/.online/.nginx/nginx.conf /etc/nginx/sites-available/default
+RUN ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
+# 統一設定權限
+RUN chown -R www-data:www-data /var/www/html
+
+# 啟動腳本 (確保 Nginx 在前景執行以防止容器退出)
+CMD php-fpm -D && \
+    sed -i "s/listen 80;/listen ${PORT};/" /etc/nginx/sites-available/default && \
+    nginx -g 'daemon off;'
