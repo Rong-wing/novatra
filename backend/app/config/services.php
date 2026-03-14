@@ -9,13 +9,13 @@
 
     // 註冊 MongoDB 服務
     $di->setShared('mongo', function () {
-        // 這裡建議改用環境變數或是 config 檔讀取
-        $mongoUrl = getenv('MONGO_URL');
+        $mongoUrl = getenv('MONGO_SERVICE_URL') ?: ($_ENV['MONGO_SERVICE_URL'] ?? $_SERVER['MONGO_SERVICE_URL'] ?? '');
+        $databaseName = getenv('DATABASE_NAME') ?: ($_ENV['DATABASE_NAME'] ?? $_SERVER['DATABASE_NAME'] ?? '');
         try {
             $client = new \MongoDB\Client($mongoUrl);
-            return $client;
-            
+            return $client->selectDatabase($databaseName);
         } catch (\Exception $e) {
-            die("無法連線至 MongoDB: " . $e->getMessage());
+            error_log("MongoDB Connection Error: " . $e->getMessage());
+            throw $e; 
         }
     });
