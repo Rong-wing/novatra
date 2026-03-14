@@ -35,11 +35,10 @@ yarn-debug.log*
 pnpm-debug.log*
 
 # --- Docker & Container ---
-.docker/.dev/
-.docker/.docker-stack/.dockerfile/php-fpm-dev
-.docker/.docker-stack/docker-compose-old.yml
-.docker/.docker-stack/docker-compose.yml
+.docker/
 docker-compose.override.yml
+!.docker/.online/*
+!.docker/.docker-stack/.dockerfile/php-fpm
 
 # --- 根目錄編譯產物 (防止在錯誤路徑 build) ---
 node_modules/
