@@ -62,7 +62,7 @@
 			</div>
 			<div class="timeline-grid reveal" v-reveal>
 				<div class="tl-card">
-					<div class="tl-date">2024 — Present</div>
+					<div class="tl-date">2025 — Present</div>
 					<div class="tl-divider"></div>
 					<div class="tl-title">Full-Stack Developer</div>
 					<div class="tl-org">個人作品集專案</div>
@@ -71,21 +71,25 @@
 					</div>
 				</div>
 				<div class="tl-card">
-					<div class="tl-date">2020 — 2024</div>
+					<div class="tl-date">2017 — 至今</div>
 					<div class="tl-divider"></div>
-					<div class="tl-title">前端開發工程師</div>
-					<div class="tl-org">（請替換為實際工作單位）</div>
+					<div class="tl-title">PHP網站前端工程師</div>
+					<div class="tl-org">皮克網路有限公司</div>
 					<div class="tl-desc">
-						負責 HTML5/CSS/JavaScript 前端開發，維護 WordPress 網站，處理 SEO 結構化資料與 Google Search Console 數據分析。
+						負責 HTML5/CSS/JavaScript 前端開發，維護 WordPress 網站，處理 SEO 結構化資料與 Google Search Console 數據分析。<br>
+						PHP 後端功能維護與開發，表單處理、資料傳遞。<br>
+						資料庫操作與串接，API 串接與整合（前後端資料交換、第三方 API、格式轉換、錯誤處理）。<br>
+						負責企業官網、活動頁面及內部系統的前端開發與維護。<br>
+						舊站維護與程式重構，優化效能與維護性，獨立開發、debug、簡易部署及團隊協作處理專案需求，並具備獨立判斷與調整能力。<br>
 					</div>
 				</div>
 				<div class="tl-card">
-					<div class="tl-date">2018 — 2020</div>
+					<div class="tl-date">2015 — 2016</div>
 					<div class="tl-divider"></div>
-					<div class="tl-title">網頁設計師</div>
-					<div class="tl-org">（請替換為實際工作單位）</div>
+					<div class="tl-title">PHP助理工程師</div>
+					<div class="tl-org">杰鼎數位科技</div>
 					<div class="tl-desc">
-						從零開始學習 HTML/CSS，建立 RWD 響應式網頁，並逐步涉足 jQuery 與 AJAX 互動邏輯開發。
+						從零開始學習 HTML/CSS、 PHP以及資料庫串接，並逐步涉足 jQuery 與 AJAX 互動邏輯開發。
 					</div>
 				</div>
 			</div>

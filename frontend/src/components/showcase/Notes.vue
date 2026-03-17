@@ -21,27 +21,29 @@
             </div>
             <div class="notes-grid reveal" v-reveal>
                 <div class="note-card">
-                    <div class="note-date">2026-02</div>
-                    <div class="note-title">Vue.js 基礎概念介紹</div>
+                    <div class="note-date">2026-03</div>
+                    <div class="note-title">Docker 容器化環境部署實戰</div>
                     <div class="note-desc">
-                        深入探討 Vue 3 Composition API 與響應式原理，包含 ref、reactive 與 computed 實作範例。
+                        基於 Docker Compose 建立多容器開發環境，實現 PHP、Node.js 與資料庫的環境隔離，並達成開發與生產環境的一致性配置。
                     </div>
                     <div class="note-tags">
-                        <span class="n-tag t-vue">Vue</span>
-                        <span class="n-tag t-php">PHP</span>
+                        <span class="n-tag t-docker">Docker</span>
+                        <span class="n-tag t-container">Container</span>
                     </div>
                 </div>
                 <div class="note-card">
                     <div class="note-date">2026-02</div>
-                    <div class="note-title">CSS Flexbox 實戰指南</div>
+                    <div class="note-title">現代化 PHP 容器化工作流</div>
                     <div class="note-desc">
-                        現代佈局技術與響應式版面實際應用，從基礎排列到複雜的自適應版型設計。
+                        深度解析 Dockerfile 多階段構建 (Multi-stage builds) 優化鏡像體積，並整合 PHP-FPM 與 Nginx 實現高效能開發環境配置。
                     </div>
                     <div class="note-tags">
-                        <span class="n-tag t-css">CSS</span>
                         <span class="n-tag t-php">PHP</span>
+                        <span class="n-tag t-container">Container</span>
+                        <span class="n-tag t-dockerfile">Dockerfile</span>
                     </div>
                 </div>
+                
                 <div class="note-card">
                     <div class="note-date">2026-01</div>
                     <div class="note-title">Composition API 使用技巧</div>
@@ -76,12 +78,12 @@
                 </div>
                 <div class="note-card">
                     <div class="note-date">2025-12</div>
-                    <div class="note-title">使用 TailwindCSS 快速開發</div>
+                    <div class="note-title">Vue.js 基礎概念介紹</div>
                     <div class="note-desc">
-                        Utility-First 工作流與客製化設計系統建置，含 JIT 模式最佳化配置。
+                        深入探討 Vue 3 Composition API 與響應式原理，包含 ref、reactive 與 computed 實作範例。
                     </div>
                     <div class="note-tags">
-                        <span class="n-tag t-js">JavaScript</span>
+                        <span class="n-tag t-vue">Vue</span>
                         <span class="n-tag t-php">PHP</span>
                     </div>
                 </div>

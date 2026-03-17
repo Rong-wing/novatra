@@ -34,7 +34,9 @@
 				</p>
 			</div>
 			<div class="profile-card" style="opacity:0;animation:fadeIn .8s .3s forwards;position:relative;z-index:2;">
-				<div class="profile-avatar-wrap">👨‍💻</div>
+				<div class="profile-avatar-wrap thumbnail">
+					<img :src="banner">
+				</div>
 				<div class="profile-name">Rong</div>
 				<div class="profile-role">Full-Stack Developer</div>
 				<div class="profile-tags">
@@ -45,9 +47,18 @@
 					<span class="p-chip">MongoDB</span>
 				</div>
 				<div class="profile-contacts">
-					<a href="https://mail.google.com/mail/?view=cm&fs=1&to=s8812422@gmail.com" target="_blank" class="contact-row">✉ s8812422@gmail.com</a>
-					<a href="https://github.com/Rong-wing/novatra/tree/main/src" target="_blank" class="contact-row">⌨ GitHub 作品集</a>
-					<span class="contact-row">📍 Taiwan</span>
+					<a href="https://mail.google.com/mail/?view=cm&fs=1&to=s8812422@gmail.com" target="_blank" class="contact-row">
+						<img src="/images/icon/mail.png" width="17" height="12" />
+						s8812422@gmail.com
+					</a>
+					<a href="https://github.com/Rong-wing/novatra/tree/main/src" target="_blank" class="contact-row">
+						<img src="/images/icon/github.png" width="14" height="13" />
+						GitHub 作品集
+					</a>
+					<span class="contact-row">
+						<img src="/images/icon/local.png" width="13" height="16" />
+						Taiwan
+					</span>
 				</div>
 			</div>
 		</div>
