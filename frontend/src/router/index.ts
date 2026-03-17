@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
-import VueDemoView from '../views/VueDemoView.vue'
+import ShowcaseView from '../views/ShowcaseView.vue'
 import PHPApiView from '../views/PHPApiView.vue'
 
 const router = createRouter({
@@ -18,9 +18,9 @@ const router = createRouter({
       component: AboutView,
     },
     {
-      path: '/vue_demo',
-      name: 'vue frontend rendering demo',
-      component: VueDemoView,
+      path: '/showcase',
+      name: 'Showcase',
+      component: ShowcaseView,
     },
     {
       path: '/php_api',

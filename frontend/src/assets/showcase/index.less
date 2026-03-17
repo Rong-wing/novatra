@@ -1,0 +1,53 @@
+/* ── SECTION SHARED ── */
+.sec {
+    padding: 80px 6%;
+    .inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        .sec-head {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+            gap: 2rem;
+            flex-wrap: wrap;
+            .sec-eyebrow {
+                display: flex;
+                align-items: center;
+                gap: .75rem;
+                margin-bottom: .6rem;
+                .sec-eyebrow-line {
+                    width: 24px;
+                    height: 1px;
+                }
+                span {
+                    font-size: .72rem;
+                    letter-spacing: .14em;
+                    text-transform: uppercase;
+                }
+            }
+            .eyebrow-brown {
+                .sec-eyebrow-line {
+                    background: var(--brown);
+                }
+                span {
+                    color: var(--brown);
+                }
+            }
+            .sec-title {
+                font-family: 'Cormorant Garamond', serif;
+                font-size: clamp(1.8rem, 3vw, 2.4rem);
+                font-weight: 500;
+                line-height: 1.15;
+                letter-spacing: -.01em;
+            }
+            .sec-title-dark {
+                color: var(--navy);
+            }
+        }
+    }
+}
+
+.sec-cream {
+    background: var(--cream);
+}

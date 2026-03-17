@@ -50,45 +50,45 @@
 </script>
 
 <template>
-	<section class="work-experience">
-		<h2>工作經歷</h2> <!-- work-experience -->
-		<div class="work-wrapper" v-for="(workItem,workKey) in workList" :key="workKey">
-			<!-- work -->
-			<div class="work-card">
-				<div class="work-item">
-					<div class="icon thumbnail">
-						<img :src="banner">
-					</div>
-					<div class="work-info">
-						<span class="name">{{ workKey }}</span>
-						<p class="job">{{workItem.job}}</p> <!-- front end -->
-					</div>
+	<!-- TIMELINE -->
+	<section class="section-cream">
+		<div class="content-wrap">
+			<div class="reveal" v-reveal>
+				<div class="section-eyebrow">
+					<div class="section-eyebrow-line"></div>
+					<span>Experience</span>
 				</div>
-				<span class="years">{{workItem.years}}</span>
-				<div class="description" v-if="Array.isArray(workItem.description)">
-					<ul>
-						<li v-for="(i, index) in workItem.description" :key="index">
-							{{ i }}
-						</li>
-					</ul>
-				</div>
-				<div class="description" v-else>
-					<ul>
-						<li>{{ workItem.description }}</li>
-					</ul>
-				</div>
-				<!-- 負責內容 -->
+				<h2 class="section-title">工作與學習歷程</h2>
 			</div>
-			<nav class="skills-list">
-				<ul> <!-- 相關技能 -->
-					<li v-for="(skillItem,skillKey) in workItem.skills" :key="skillKey">
-						<span>{{ skillKey }}</span>
-						<div class="level-bar">
-							<div class="fill-bar" :style="{ width: skillItem + '%' }"></div>
-						</div>
-					</li>
-				</ul>
-			</nav>
+			<div class="timeline-grid reveal" v-reveal>
+				<div class="tl-card">
+					<div class="tl-date">2024 — Present</div>
+					<div class="tl-divider"></div>
+					<div class="tl-title">Full-Stack Developer</div>
+					<div class="tl-org">個人作品集專案</div>
+					<div class="tl-desc">
+						深化 Vue 3 Composition API、Vite 工具鏈、PHP RESTful API 開發，並以 Docker 進行環境管理與部署。
+					</div>
+				</div>
+				<div class="tl-card">
+					<div class="tl-date">2020 — 2024</div>
+					<div class="tl-divider"></div>
+					<div class="tl-title">前端開發工程師</div>
+					<div class="tl-org">（請替換為實際工作單位）</div>
+					<div class="tl-desc">
+						負責 HTML5/CSS/JavaScript 前端開發，維護 WordPress 網站，處理 SEO 結構化資料與 Google Search Console 數據分析。
+					</div>
+				</div>
+				<div class="tl-card">
+					<div class="tl-date">2018 — 2020</div>
+					<div class="tl-divider"></div>
+					<div class="tl-title">網頁設計師</div>
+					<div class="tl-org">（請替換為實際工作單位）</div>
+					<div class="tl-desc">
+						從零開始學習 HTML/CSS，建立 RWD 響應式網頁，並逐步涉足 jQuery 與 AJAX 互動邏輯開發。
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 </template>

@@ -1,0 +1,97 @@
+/* ── NOTES ── */
+.sec-alt {
+    background: var(--cream-alt);
+
+    /* ── NOTES SECTION ── */
+    .notes-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+    }
+    .note-card {
+        background: var(--cream);
+        padding: 1.75rem;
+        transition: background .25s;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        &:hover {
+            background: var(--cream-alt);
+            &::after {
+                opacity: 1;
+                transform: translate(2px,-2px);
+            }
+        }
+        &::after {
+            content: '↗';
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            font-size: .85rem;
+            color: var(--brown);
+            opacity: 0;
+            transition: opacity .2s, transform .2s;
+        }
+        .note-date {
+            font-size: .7rem;
+            letter-spacing: .06em;
+            color: var(--muted);
+            margin-bottom: .6rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .note-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--navy);
+            margin-bottom: .5rem;
+            line-height: 1.3;
+        }
+        .note-desc {
+            font-size: .82rem;
+            color: var(--muted);
+            line-height: 1.65;
+            margin-bottom: 1rem;
+        }
+        .note-tags {
+            display: flex;
+            gap: .3rem;
+            flex-wrap: wrap;
+            .n-tag {
+                font-size: .62rem;
+                letter-spacing: .06em;
+                text-transform: uppercase;
+                padding: .15rem .5rem;
+                border-radius: 1px;
+                border: 1px solid;
+            }
+            .t-vue {
+                color: #2d9c6e;
+                border-color: rgba(45,156,110,.3);
+                background: rgba(45,156,110,.06);
+            }
+            .t-php {
+                color: #7954c8;
+                border-color: rgba(121,84,200,.3);
+                background: rgba(121,84,200,.06);
+            }
+            .t-css {
+                color: #2563c8;
+                border-color: rgba(37,99,200,.3);
+                background: rgba(37,99,200,.06);
+            }
+            .t-js  {
+                color: #b07d1a;
+                border-color: rgba(176,125,26,.3);
+                background: rgba(176,125,26,.06);
+            }
+            .t-seo {
+                color: #b03a2e;
+                border-color: rgba(176,58,46,.3);
+                background: rgba(176,58,46,.06);
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+<svg viewBox="0 0 600 800" preserveAspectRatio="xMaxYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="400" y="100" width="280" height="280" stroke="rgba(247,245,240,0.04)" stroke-width="1"/>
+    <rect x="360" y="140" width="280" height="280" stroke="rgba(247,245,240,0.04)" stroke-width="1"/>
+    <circle cx="480" cy="480" r="180" stroke="rgba(176,125,79,0.06)" stroke-width="1"/>
+    <circle cx="480" cy="480" r="120" stroke="rgba(176,125,79,0.06)" stroke-width="1"/>
+    <line x1="300" y1="0" x2="300" y2="800" stroke="rgba(247,245,240,0.03)" stroke-width="1"/>
+    <line x1="0" y1="400" x2="600" y2="400" stroke="rgba(247,245,240,0.03)" stroke-width="1"/>
+    <rect x="440" y="360" width="80" height="80" fill="rgba(176,125,79,0.07)"/>
+</svg>

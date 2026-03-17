@@ -1,78 +1,138 @@
 <template>
-	<section class="featured-skills container">
-        <h2>全端開發與工程實踐</h2>
-        <div class="skill-block">
-            <div class="skill-form">
-                <div class="heading">
-                    <h3>前端開發與互動實踐</h3>
-                    <span class="subtitle">(Frontend & Interactive Dev)</span>
+	<section class="featured-skills">
+        <div class="container">
+            <div class="heading-header reveal" v-reveal>
+                <div class="heading-label-group">
+                    <div class="heading-eyebrow">
+                        <div class="heading-eyebrow-line"></div>
+                        <span>Expertise</span>
+                    </div>
+                    <h2 class="heading-title">全端開發<br>與工程實踐</h2>
                 </div>
-                <ul class="info skill-wrapper">
-                    <li>
-                        <span class="point">核心框架</span>
-                        <span class="item">Vue.js (Vue 3), ReactJS</span>
-                    </li>
-                    <li>
-                        <span class="point">基礎紮實</span>
-                        <span class="item">JavaScript (ES6+), HTML5, CSS3 / Less</span>
-                    </li>
-                    <li>
-                        <span class="point">跨裝置　</span>
-                        <span class="item">RWD 響應式設計、跨瀏覽器相容性實踐</span>
-                    </li>
-                    <li>
-                        <span class="point">互動邏輯</span>
-                        <span class="item">jQuery, jQuery AJAX</span>
-                    </li>
-                </ul>
+                <p class="heading-desc">從前端互動介面到後端 API 整合，以工程思維打造具備可維護性與效能的全端解決方案。</p>
             </div>
-            <div class="skill-form">
-                <div class="heading">
-                    <h3>後端開發與系統整合</h3>
-                    <span class="subtitle">(Backend & Data Integration)</span>
+
+            <div class="skills-grid reveal" v-reveal>
+                <div class="skill-group">
+                    <div class="skill-group-name">前端開發</div>
+                    <div class="skill-group-en">Frontend & Interactive</div>
+                    <div class="skill-item">
+                        <div class="skill-row">
+                            <span class="skill-name">Vue.js 3</span>
+                            <span class="skill-pct">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width:85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-row">
+                            <span class="skill-name">JavaScript ES6+</span>
+                            <span class="skill-pct">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width:90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-row">
+                            <span class="skill-name">HTML5 / CSS3</span>
+                            <span class="skill-pct">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width:95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-row">
+                            <span class="skill-name">RWD 響應式設計</span>
+                            <span class="skill-pct">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width:90%"></div>
+                        </div>
+                    </div>
                 </div>
-                <ul class="info skill-wrapper">
-                    <li>
-                        <span class="point">後端語言</span>
-                        <span class="item">PHP (API 開發與邏輯處理)</span>
-                    </li>
-                    <li>
-                        <span class="point">內容管理</span>
-                        <span class="item">WordPress 客製化開發</span>
-                    </li>
-                    <li>
-                        <span class="point">資料存取</span>
-                        <span class="item">MongoDB, RESTful API 串接</span>
-                    </li>
-                    <li>
-                        <span class="point">資料交換</span>
-                        <span class="item">前後端 JSON 資料交換規範</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="skill-form">
-                <div class="heading">
-                    <h3>工程自動化與效能優化</h3>
-                    <span class="subtitle">(DevOps & Optimization)</span>
+                <div class="skill-group">
+                    <div class="skill-group-name">後端整合</div>
+                    <div class="skill-group-en">Backend & Data</div>
+                    <div class="skill-item">
+                        <div class="skill-row">
+                            <span class="skill-name">PHP API 開發</span>
+                            <span class="skill-pct">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width:80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-row">
+                            <span class="skill-name">MongoDB / RESTful</span>
+                            <span class="skill-pct">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width:75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-row">
+                            <span class="skill-name">WordPress 客製化</span>
+                            <span class="skill-pct">82%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width:82%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-row">
+                            <span class="skill-name">jQuery / AJAX</span>
+                            <span class="skill-pct">88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width:88%"></div>
+                        </div>
+                    </div>
                 </div>
-                <ul class="info skill-wrapper">
-                    <li>
-                        <span class="point">基礎設施</span>
-                        <span class="item">Docker 容器化部署</span>
-                    </li>
-                    <li>
-                        <span class="point">開發工具</span>
-                        <span class="item">Visual Studio Code, Git 版本控制</span>
-                    </li>
-                    <li>
-                        <span class="point">搜尋優化</span>
-                        <span class="item">SEO 策略 (Meta, Schema 結構化資料)</span>
-                    </li>
-                    <li>
-                        <span class="point">監測工具</span>
-                        <span class="item">Google Search Console 數據追蹤</span>
-                    </li>
-                </ul>
+                <div class="skill-group">
+                    <div class="skill-group-name">工程實踐</div>
+                    <div class="skill-group-en">DevOps & Optimization</div>
+                    <div class="skill-item">
+                        <div class="skill-row">
+                            <span class="skill-name">Docker 容器化</span>
+                            <span class="skill-pct">72%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width:72%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-row">
+                            <span class="skill-name">SEO 策略優化</span>
+                            <span class="skill-pct">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width:85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-row">
+                            <span class="skill-name">Git 版本控制</span>
+                            <span class="skill-pct">88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width:88%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-row">
+                            <span class="skill-name">效能優化</span>
+                            <span class="skill-pct">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width:80%"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

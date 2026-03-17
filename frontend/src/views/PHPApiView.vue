@@ -1,14 +1,12 @@
-<template>
-    <Index></Index>
-</template>
+<script setup lang="ts">
+	import Banner from '../components/PHPApi/Banner.vue'
+	import Demo from '../components/PHPApi/Demo.vue'
+	import Info from '../components/PHPApi/Info.vue'
 
-<script>
-import { ref } from 'vue'
-import Index from '../components/PHPApi/Index.vue'
-
-export default {
-  components: {
-    Index: Index
-  }
-}
 </script>
+
+<template>
+    <Banner></Banner>
+    <Demo></Demo>
+    <Info></Info>
+</template>

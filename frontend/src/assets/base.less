@@ -1,36 +1,89 @@
 :root {
-	--header-height: 50px;
-	--main-color: #1E2D45;
-	--sub-color: #2f4863;
-	--third-color: #FFF;
-	--fourth-color: #1b6a7d;
-	--color-background: #FAF8F5;
-	--h2-color: #1A1A1A;
-	--text-color: #6A6A6A;
-
-	/** 技能填充 */
-	--filled-color: #1E2D45;
-	--not-filled-color: #D9D9D9;
-
-	/** footer */
-	--text-light-gray-color: #AAB4C4;
+	--header-height: 60px;
+	--main-color: #1B2A4A;
+	--sub-color: #243659;
+	--cream: #F7F5F0;
+    --cream-alt: #EDE8DF;
+    --sand: #D9CFC0;
+    --brown: #B07D4F;
+    --brown-lt: #C9935F;
+    --text-color: #1B2A4A;
+    --muted: #7A7264;
+    --border: rgba(27, 42, 74, 0.12);
+	--c-comment: #5a6a8a;
+	--c-kw: #a78bfa;
+	--c-str: #86efac;
+	--c-var: #7dd3fc;
+	--c-fn: #fbbf24;
+	--c-key: #f9a8d4;
+	--c-num: #fb923c;
 }
 #app {
 	margin: 0 auto;
 	font-weight: normal;
 }
+html {
+	scroll-behavior: smooth;
+}
 body {
-	background: var(--color-background);
-	margin: var(--header-height) 0 0;
+  background: var(--cream);
+  color: var(--text-color);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+  margin: var(--header-height) 0 0;
 }
-h2 {
-	color: var(--h2-color);
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar {
+	width: 5px;
 }
-p {
-	color: var(--text-color);
+::-webkit-scrollbar-track {
+	background: var(--cream);
+}
+::-webkit-scrollbar-thumb {
+	background: var(--sand);
+	border-radius: 3px;
+}
+
+h2 , p {
+	margin: 0;
 }
 ul {
 	padding: 0;
 	margin: 0;
 	list-style: none;
+}
+
+@keyframes slideUp {
+	from {
+		opacity: 0;
+		transform: translateY(28px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes barGrow {
+    to {
+        transform: scaleX(1);
+    }
+}
+@keyframes blink {
+    0%,
+    100% {
+        opacity:1
+    }
+    50% {
+        opacity:0
+    }
 }

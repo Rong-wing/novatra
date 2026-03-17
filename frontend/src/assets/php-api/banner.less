@@ -1,0 +1,57 @@
+.page-hero {
+    background: var(--main-color);
+    padding: 120px 6% 70px;
+    position: relative;
+    overflow: hidden;
+    .banner-image , .hero-geo {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 40%;
+        pointer-events: none;
+    }
+    .page-hero-inner-test {
+        max-width: 1100px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+        .hero-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            margin-bottom: 1.5rem;
+            .hero-eyebrow-line {
+                width: 32px;
+                height: 1px;
+                background: var(--brown-lt);
+            }
+            span {
+                font-size: .72rem;
+                letter-spacing: .14em;
+                text-transform: uppercase;
+                color: var(--brown-lt);
+            }
+        }
+        .page-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 4.5vw, 4rem);
+            font-weight: 500;
+            line-height: 1.05;
+            color: var(--cream);
+            letter-spacing: -.01em;
+            margin-bottom: 1.2rem;
+            em {
+                font-style: italic;
+                color: var(--brown-lt);
+            }
+        }
+        .page-desc {
+            color: rgba(247,245,240,0.55);
+            font-size: .92rem;
+            line-height: 1.8;
+            max-width: 520px;
+            font-weight: 300;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+/* VALUES */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    .value-card {
+        background: var(--cream-alt);
+        padding: 2.5rem 2rem;
+        transition: background .2s;
+        &:hover {
+            background: var(--cream);
+        }
+        .value-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: var(--sand);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        .value-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--navy);
+            margin-bottom: .5rem;
+        }
+        .value-desc {
+            font-size: .86rem;
+            color: var(--muted);
+            line-height: 1.75;
+        }
+    }
+}

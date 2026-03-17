@@ -1,0 +1,89 @@
+.site-card {
+    border: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    .site-card-left {
+        padding: 2.5rem;
+        background: var(--cream);
+        border-right: 1px solid var(--border);
+        .site-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--navy);
+            margin-bottom: .75rem;
+        }
+        .site-desc {
+            font-size: .88rem;
+            color: var(--muted);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .site-link {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            font-size: .75rem;
+            letter-spacing: .09em;
+            text-transform: uppercase;
+            color: var(--brown);
+            text-decoration: none;
+            transition: gap .2s;
+            &hover {
+                gap: .75rem;
+            }
+        }
+    }
+    .site-card-right {
+        padding: 2.5rem;
+        background: var(--cream-alt);
+        .stack-chips {
+            display: flex;
+            flex-direction: column;
+            gap: .6rem;
+        }
+        .stack-chip {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            padding: .7rem 1rem;
+            background: var(--cream);
+            border: 1px solid var(--border);
+            transition: border-color .2s;
+            &:hover {
+                border-color: var(--brown);
+            }
+            .chip-icon {
+                width: 1.8rem;
+                text-align: center;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .chip-info {
+                flex: 1;
+            }
+            .chip-name {
+                font-size: .83rem;
+                color: var(--navy);
+                font-weight: 400;
+            }
+            .chip-sub {
+                font-size: .7rem;
+                color: var(--muted);
+                letter-spacing: .04em;
+            }
+            .chip-tag {
+                font-size: .62rem;
+                letter-spacing: .07em;
+                text-transform: uppercase;
+                padding: .18rem .5rem;
+                border: 1px solid var(--border);
+                color: var(--muted);
+            }
+
+        }
+    }
+}

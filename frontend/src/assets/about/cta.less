@@ -1,0 +1,64 @@
+/* CTA */
+.cta-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 6%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 3rem;
+    .cta-text {
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            font-weight: 500;
+            color: var(--cream);
+            margin-bottom: .75rem;
+        }
+        p {
+            color: rgba(247,245,240,0.5);
+            font-size: .92rem;
+            line-height: 1.7;
+        }
+    }
+    .cta-actions {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .72rem 1.6rem;
+            border-radius: 2px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: .82rem;
+            font-weight: 400;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all .25s;
+            white-space: nowrap;
+        }
+        .btn-warm {
+            background: var(--brown);
+            color: var(--cream);
+            &:hover {
+                background: var(--brown-lt);
+                transform: translateY(-2px);
+            }
+        }
+        .btn-outline-cream {
+            background: transparent;
+            border: 1px solid rgba(247,245,240,0.25);
+            color: rgba(247,245,240,0.8);
+            &:hover {
+                border-color: var(--cream);
+                color: var(--cream);
+                transform: translateY(-2px);
+            }
+        }
+    }
+}
