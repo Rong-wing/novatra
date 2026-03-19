@@ -88,7 +88,7 @@
 					</div>
 					<h2 class="sec-title sec-title-dark">Live Demo</h2>
 				</div>
-				<p style="max-width:320px;font-size:.88rem;color:var(--muted);line-height:1.75">
+				<p class="sec-head-p">
 					直接在頁面上互動，感受 CSS 動畫、JavaScript 邏輯與視覺回饋的細節處理。
 				</p>
 			</div>
@@ -108,7 +108,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="typing-tags" style="margin-top:1rem">
+					<div class="typing-tags">
 						<span class="t-badge">CSS Only</span>
 						<span class="t-badge">Transform</span>
 						<span class="t-badge">Perspective</span>
@@ -127,7 +127,7 @@
 						<div class="pal-swatch" style="background:#F7F5F0" data-hex="#F7F5F0"></div>
 					</div>
 					<button class="palette-btn" id="paletteBtn">⟳ 隨機生成配色</button>
-					<div class="typing-tags" style="margin-top:.75rem">
+					<div class="typing-tags">
 						<span class="t-badge">JavaScript</span>
 						<span class="t-badge">CSS Variables</span>
 					</div>
@@ -142,7 +142,7 @@
 							<span class="cursor"></span>
 						</div>
 					</div>
-					<div class="typing-tags" style="margin-top:.75rem">
+					<div class="typing-tags">
 						<span class="t-badge">JavaScript</span>
 						<span class="t-badge">setTimeout</span>
 						<span class="t-badge">DOM</span>

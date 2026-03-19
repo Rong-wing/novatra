@@ -8,6 +8,12 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        .heading-eyebrow {
+            margin-bottom: .75rem;
+        }
+        .heading-title {
+            margin-bottom: 1.5rem;
+        }
         .about-body {
             color: var(--muted);
             font-size: .92rem;
@@ -42,6 +48,15 @@
         background-repeat: no-repeat;
         background-position: top right;
         background-size: contain;
+        .heading-eyebrow {
+            margin-bottom: 1rem;
+            .heading-eyebrow-line {
+                background: var(--brown-lt);
+            }
+            span {
+                color: var(--brown-lt);
+            }
+        }
         .stack-list {
             display: grid;
             grid-template-columns: repeat(2, 1fr);

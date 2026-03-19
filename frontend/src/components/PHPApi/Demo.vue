@@ -1,6 +1,7 @@
 
 <script setup lang="ts">
-	import { ref } from 'vue';
+	import { ref, inject } from 'vue';
+    const api = inject('api');
 
     // --- 狀態定義 ---
     const curTab = ref<'php' | 'json'>('php');
@@ -57,16 +58,39 @@
         ];
     }
 
-    function runProcess() {
+    //this is TypeScript
+    const runLocalProcess = () => {
         const text = inputText.value.trim();
-        const d = parse(text);
-        if (!d) {
+        const result = parse(text);
+        finalData(result);
+    }
+    //this is PHP
+    const runOnlineProcess = async () => {
+        //這裡的路徑必須對應 Proxy 的設定
+        /** this is post */
+        const response = await api.post('/index', {
+        	action: 'getProducts',
+        	data: inputText.value.trim()
+        });
+        /** this is get */
+        // const response = await api.get('/index', {
+        //     params: {
+        //         action: 'getProducts',
+        //         data: inputText.value.trim()
+        //     }
+        // });
+        const result = response.data.info;
+        finalData(result);
+    }
+
+    function finalData(result: any) {
+        if (!result) {
             showError.value = true;
             return;
         }
         showError.value = false;
-        lastPHP = makePHP(d);
-        lastJSON = makeJSON(d);
+        lastPHP = makePHP(result);
+        lastJSON = makeJSON(result);
         refreshCodeDisplay();
     }
 
@@ -83,7 +107,7 @@
 
 <template>
     <div class="demo-wrap">
-        <div class="demo-inner" style="opacity:0;animation:fadeIn .8s .4s forwards">
+        <div class="demo-inner">
             <div class="panel-left">
                 <div class="panel-header">
                     <span class="panel-header-title">SEO 結構化資料產生器</span>
@@ -104,11 +128,11 @@
                     
                     <div class="btn-row">
                         <div>
-                            <button class="btn btn-ghost-navy" @click="runProcess">前端模擬</button>
+                            <button class="btn btn-ghost-navy" @click="runLocalProcess">前端模擬</button>
                             <div class="btn-sub">無需網路連線</div>
                         </div>
                         <div>
-                            <button class="btn btn-warm" @click="runProcess">後端 API 實作</button>
+                            <button class="btn btn-warm" @click="runOnlineProcess">後端 API 實作</button>
                             <div class="btn-sub">需連線至後端</div>
                         </div>
                     </div>

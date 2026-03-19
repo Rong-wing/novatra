@@ -11,11 +11,13 @@
         width: 40%;
         pointer-events: none;
     }
-    .page-hero-inner-test {
+    .page-hero-inner-wrapper {
         max-width: 1100px;
         margin: 0 auto;
         position: relative;
         z-index: 2;
+        opacity: 0;
+        animation: slideUp .7s .1s cubic-bezier(.25,.46,.45,.94) forwards;
         .hero-eyebrow {
             display: flex;
             align-items: center;

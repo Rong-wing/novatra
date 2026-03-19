@@ -20,22 +20,17 @@
                 try {
                     // $data = "[2026-02-28] PHP正規化教學 - 作者：Nova";
                     //正規化：抓取日期、標題、作者
-                    $pattern = '/\[(?P<date>.*?)\]\s*(?P<headline>.*?)\s*-\s*作者：(?P<author>.*)/u';
+                    $pattern = '/\[(?P<date>.*?)\]\s*(?P<title>.*?)\s*[\-\–]\s*作者：(?P<author>.*)/u';
 
                     if (preg_match($pattern, $data, $matches)) {
                         //過濾日期格式確保安全
                         $date = new DateTime($matches['date']);
                         $datePublished = $date->format('Y/m/d');
                         
-                        $seoSchema = [
-                            "@context" => "https://schema.org",
-                            "@type" => "Article",
-                            "headline" => $matches['headline'],
-                            "datePublished" => $datePublished,
-                            "author" => [
-                                "@type" => "Person",
-                                "name" => trim($matches['author'])
-                            ]
+                        $info = [
+                            "date" => $datePublished,
+                            "title" => $matches['title'],
+                            "author" => trim($matches['author']),
                         ];
                     }
 
@@ -43,7 +38,7 @@
                         // 設定 Header 為 JSON
                         return $this->response->setJsonContent([
                             "status"    => "success",
-                            "seoSchema" => $seoSchema
+                            "info" => $info
                         ]);
                     } else {
                         // 如果 action 不是 getProducts，就會跑進這裡
@@ -69,6 +64,19 @@
         }
 
         public function testMongoAction() {
-            
+            try {
+                $postRepo = new PostRepository($this->mongo);
+                $posts = $postRepo->findByTitle('我的第一個 Docker 作品');
+
+                return $this->response->setJsonContent([
+                    "status" => "success",
+                    "databases" => $posts
+                ]);
+            } catch (\Exception $e) {
+                return $this->response->setJsonContent([
+                    "status" => "error",
+                    "message" => $e->getMessage()
+                ]);
+            }
         }
     }

@@ -30,10 +30,20 @@ docker-compose up -d
 - Frontend Core: 基礎路由、頁面組件與 Tailwind UI 已初步完成。
 - Infrastructure: 已成功部署於 Railway，並完成 Docker 環境調校。
 - Data Simulation: * PHP API 頁面： 目前在 php_api 頁面中使用前端模擬 (Mock Data) 呈現 API 回傳格式與資料渲染邏輯。
-- 下一階段重點： 正進行 PHP 實際 API 端點的撰寫，以及 MongoDB CRUD（新增、修改、刪除）功能的完整銜接。
+- 下一階段重點： MongoDB CRUD（新增、修改、刪除）功能的完整銜接。
 
 
 ## 更新日誌 (Changelog)
+
+### 2026-03-19 | 網站前端重構 v2.0.1
+#### 從前端模擬轉向後端 API 實作
+- 架構優化：將原本純前端的資料解析邏輯，重構為透過 Axios 串接 PHP 後端 API，實現真實的資料交換流程。
+- 非同步處理：引入 async/await 處理 API 請求，並實作讀取狀態與錯誤處理機制，提升使用者體驗。
+- 環境擴展：支援「前端模擬 (Local)」與「後端實作 (Online)」雙模式切換，展示對不同執行環境的開發適應力。
+
+#### 樣式與系統架構優化
+- 樣式工程化 (Less)：將原本分散的 CSS 樣式遷移至 Less 預處理器，導入變數管理與巢狀結構（Nesting），大幅提升樣式的複用性與階層清晰度。
+- 資料響應式重構：將前端靜態資料部分轉換為 Vue 3 ref 響應式變數。
 
 ### 2026-03-18 | 網站前端重構 v2.0.0-alpha
 #### 核心更動：UI/UX 視覺與互動體驗升級

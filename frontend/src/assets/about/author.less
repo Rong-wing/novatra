@@ -19,41 +19,47 @@
         grid-template-columns: 1fr 1fr;
         gap: 5rem;
         align-items: end;
-        .hero-eyebrow {
-            display: flex;
-            align-items: center;
-            gap: .75rem;
-            margin-bottom: 1.5rem;
-            .hero-eyebrow-line {
-                width: 32px;
-                height: 1px;
-                background: var(--brown-lt);
+        .hero-wrapper {
+            position: relative;
+            z-index: 2;
+            opacity: 0;
+            animation: slideUp .7s .1s cubic-bezier(.25,.46,.45,.94) forwards;
+            .hero-eyebrow {
+                display: flex;
+                align-items: center;
+                gap: .75rem;
+                margin-bottom: 1.5rem;
+                .hero-eyebrow-line {
+                    width: 32px;
+                    height: 1px;
+                    background: var(--brown-lt);
+                }
+                span {
+                    font-size: .72rem;
+                    letter-spacing: .14em;
+                    text-transform: uppercase;
+                    color: var(--brown-lt);
+                }
             }
-            span {
-                font-size: .72rem;
-                letter-spacing: .14em;
-                text-transform: uppercase;
-                color: var(--brown-lt);
+            .page-title {
+                font-family: 'Cormorant Garamond', serif;
+                font-size: clamp(2.8rem, 5vw, 4.5rem);
+                font-weight: 500;
+                line-height: 1.05;
+                color: var(--cream);
+                letter-spacing: -.01em;
+                margin-bottom: 1.5rem;
+                em {
+                    font-style: italic;
+                    color: var(--brown-lt);
+                }
             }
-        }
-        .page-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2.8rem, 5vw, 4.5rem);
-            font-weight: 500;
-            line-height: 1.05;
-            color: var(--cream);
-            letter-spacing: -.01em;
-            margin-bottom: 1.5rem;
-            em {
-                font-style: italic;
-                color: var(--brown-lt);
+            .page-intro {
+                color: rgba(247,245,240,0.55);
+                font-size: .95rem;
+                line-height: 1.85;
+                font-weight: 300;
             }
-        }
-        .page-intro {
-            color: rgba(247,245,240,0.55);
-            font-size: .95rem;
-            line-height: 1.85;
-            font-weight: 300;
         }
     }
 }
@@ -63,6 +69,10 @@
     background: rgba(247,245,240,0.04);
     border: 1px solid rgba(247,245,240,0.08);
     padding: 2rem;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    animation: fadeIn .8s .3s forwards;
     position: relative;
     z-index: 2;
     .profile-avatar-wrap {

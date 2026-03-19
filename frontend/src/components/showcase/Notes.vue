@@ -15,7 +15,7 @@
                     </div>
                     <h2 class="sec-title sec-title-dark">技術筆記</h2>
                 </div>
-                <p style="max-width:320px;font-size:.88rem;color:var(--muted);line-height:1.75">
+                <p class="sec-head-p">
                     學習過程中整理的技術紀錄，涵蓋 Vue、CSS、JavaScript、SEO 等實作心得。
                 </p>
             </div>

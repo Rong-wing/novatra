@@ -12,7 +12,7 @@
             <circle cx="220" cy="430" r="120" stroke="rgba(176,125,79,0.07)" stroke-width="1"/>
             <rect x="260" y="320" width="50" height="50" fill="rgba(176,125,79,0.06)"/>
         </svg>
-        <div class="page-hero-inner-test" style="opacity:0;animation:slideUp .7s .1s cubic-bezier(.25,.46,.45,.94) forwards">
+        <div class="page-hero-inner-wrapper">
             <div class="hero-eyebrow">
                 <div class="hero-eyebrow-line"></div>
                 <span>PHP Full-Stack</span>

@@ -21,71 +21,74 @@
         align-items: end;
         position: relative;
         z-index: 2;
-        .eyebrow {
-            display: flex;
-            align-items: center;
-            gap: .75rem;
-            margin-bottom: 1.25rem;
-            .eyebrow-line {
-                width: 32px;
-                height: 1px;
-                background: var(--brown-lt);
+        .eyebrow-wrapper {
+            opacity: 0;
+            animation: slideUp .7s .1s cubic-bezier(.25,.46,.45,.94) forwards;
+            .eyebrow {
+                display: flex;
+                align-items: center;
+                gap: .75rem;
+                margin-bottom: 1.25rem;
+                .eyebrow-line {
+                    width: 32px;
+                    height: 1px;
+                    background: var(--brown-lt);
+                }
+                span {
+                    font-size: .72rem;
+                    letter-spacing: .14em;
+                    text-transform: uppercase;
+                    color: var(--brown-lt);
+                }
             }
-            span {
-                font-size: .72rem;
-                letter-spacing: .14em;
-                text-transform: uppercase;
-                color: var(--brown-lt);
+            .page-title {
+                font-family: 'Cormorant Garamond', serif;
+                font-size: clamp(2.5rem, 4.5vw, 3.8rem);
+                font-weight: 500;
+                line-height: 1.05;
+                color: var(--cream);
+                letter-spacing: -.01em;
+                margin-bottom: 1rem;
+                em {
+                    font-style: italic;
+                    color: var(--brown-lt);
+                }
+            }
+            .page-desc {
+                color: rgba(247,245,240,0.5);
+                font-size: .9rem;
+                line-height: 1.8;
+            }
+            /* Nav pills for the page sections */
+            .section-nav {
+                display: flex;
+                gap: 0;
+                border: 1px solid rgba(247,245,240,0.1);
+                align-self: flex-end;
+                .snav-item {
+                    padding: .9rem 1.4rem;
+                    font-size: .72rem;
+                    letter-spacing: .1em;
+                    text-transform: uppercase;
+                    color: rgba(247,245,240,0.35);
+                    border-right: 1px solid rgba(247,245,240,0.1);
+                    cursor: pointer;
+                    transition: all .2s;
+                    text-decoration: none;
+                    display: block;
+                    &::last-child {
+                        border-right: none;
+                    }
+                    &:hover {
+                        color: var(--cream);
+                        background: rgba(247,245,240,0.04);
+                    }
+                }
+                .here {
+                    color: var(--brown-lt);
+                    background: rgba(176,125,79,0.08);
+                }
             }
         }
-        .page-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2.5rem, 4.5vw, 3.8rem);
-            font-weight: 500;
-            line-height: 1.05;
-            color: var(--cream);
-            letter-spacing: -.01em;
-            margin-bottom: 1rem;
-            em {
-                font-style: italic;
-                color: var(--brown-lt);
-            }
-        }
-        .page-desc {
-            color: rgba(247,245,240,0.5);
-            font-size: .9rem;
-            line-height: 1.8;
-        }
-    }
-}
-
-/* Nav pills for the page sections */
-.section-nav {
-    display: flex;
-    gap: 0;
-    border: 1px solid rgba(247,245,240,0.1);
-    align-self: flex-end;
-    .snav-item {
-        padding: .9rem 1.4rem;
-        font-size: .72rem;
-        letter-spacing: .1em;
-        text-transform: uppercase;
-        color: rgba(247,245,240,0.35);
-        border-right: 1px solid rgba(247,245,240,0.1);
-        cursor: pointer;
-        transition: all .2s;
-        text-decoration: none;
-        display: block;
-        &::last-child {
-            border-right: none;
-        }
-        &:hover {
-            color: var(--cream);
-            background: rgba(247,245,240,0.04);
-        }
-    }
-    .here {
-        color: var(--brown-lt);
-        background: rgba(176,125,79,0.08);
     }
 }
