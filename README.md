@@ -29,7 +29,7 @@ docker-compose up -d
 目前專案正持續迭代中，以下為當前進度：
 - Frontend Core: 基礎路由、頁面組件與 Tailwind UI 已初步完成。
 - Infrastructure: 已成功部署於 Railway，並完成 Docker 環境調校。
-- Data Simulation: * PHP API 頁面： 目前在 php_api 頁面中使用前端模擬 (Mock Data) 呈現 API 回傳格式與資料渲染邏輯。
+- Backend API Implementation: 已完成前端與後端 PHP API 的非同步串接，實現真實資料的獲取、處理與動態渲染。
 - 下一階段重點： MongoDB CRUD（新增、修改、刪除）功能的完整銜接。
 
 
