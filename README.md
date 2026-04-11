@@ -1,6 +1,6 @@
 # novatra
-## 現代化全端電商開發架構
-Novatra 是一個以資深軟體工程思維打造的電商前端框架與系統整合實驗專案。本專案核心目標在於實踐 Vue 3 組合式 API (Composition API) 與 TypeScript 的嚴謹架構，並結合 Docker 容器化技術 與 PHP(phalcon)/MongoDB 的後端解決方案。
+## 現代化全端開發架構
+Novatra 是一個以資深軟體工程思維打造的全端框架與系統整合實驗專案。本專案核心目標在於實踐 Vue 3 組合式 API (Composition API) 與 TypeScript 的嚴謹架構，並結合 Docker 容器化技術 與 PHP(phalcon)/MongoDB 的後端解決方案。
 
 目前專案正處於核心功能對接與 API 串階階段，旨在建立一個高效、可擴充且易於維護的現代化 Web 應用程式。
 
