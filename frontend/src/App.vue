@@ -28,7 +28,7 @@
 				<img src="/images/icon/mail.png" width="17" height="12" />
 				s8812422@gmail.com
 			</a>
-			<a href="https://github.com/Rong-wing/novatra/tree/main/src" target="_blank">
+			<a href="https://github.com/Rong-wing/novatra" target="_blank">
 				<img src="/images/icon/github.png" width="14" height="13" />
 				GitHub 作品集
 			</a>
